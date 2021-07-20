@@ -46,6 +46,8 @@ namespace CarChecker.Server
             services.AddAuthentication()
                 .AddIdentityServerJwt();
 
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -58,7 +60,7 @@ namespace CarChecker.Server
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                app.UseMigrationsEndPoint();
                 app.UseWebAssemblyDebugging();
             }
             else
