@@ -58,8 +58,8 @@ namespace CarChecker.Client.Data
                 : new ClaimsPrincipal(new ClaimsIdentity());
         }
 
-        public ValueTask<string[]> Autocomplete(string prefix)
-            => js.InvokeAsync<string[]>("localVehicleStore.autocompleteKeys", "serverdata", prefix, 5);
+        public ValueTask<string[]> Autocomplete(string prefix, int maxResults)
+            => js.InvokeAsync<string[]>("localVehicleStore.autocompleteKeys", "serverdata", prefix, maxResults);
 
         // If there's an outstanding local edit, use that. If not, use the server data.
         public async Task<Vehicle> GetVehicle(string licenseNumber)

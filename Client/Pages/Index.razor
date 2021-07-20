@@ -38,9 +38,11 @@
     [RegularExpression("[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*\\-{0,1}", ErrorMessageResourceType = typeof(Resources.App), ErrorMessageResourceName = nameof(Resources.App.LicenseNumberIncorrectFormat))]
     public string LicenseNumber { get; set; }
 
+    int maxResults = 10;
+
     async Task<IEnumerable<string>> GetLicenseAutocompleteItems(string prefix)
     {
-        return await LocalVehiclesStore.Autocomplete(prefix);
+        return await LocalVehiclesStore.Autocomplete(prefix, maxResults);
     }
 
     void FindVehicle()

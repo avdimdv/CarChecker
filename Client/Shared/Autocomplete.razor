@@ -4,7 +4,7 @@
        @attributes="@AdditionalAttributes" class="@CssClass" />
 
 <div role="listbox" class="autocomplete-suggestions @(visible ? "visible" : "")">
-    @foreach (var choice in currentChoices.Take(3))
+    @foreach (var choice in currentChoices)
     {
         <div role="option" @onclick="() => ChooseAsync(choice)">@choice</div>
     }

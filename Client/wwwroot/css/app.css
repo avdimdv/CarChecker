@@ -227,7 +227,7 @@ header .toolbar-item, footer .toolbar-item {
         background: #FFFFFF;
         padding: 4px 0;
         margin-top: 4px;
-        max-height: 328px;
+        max-height: 528px;
         border-radius: 4px;
         opacity: 0;
         transition: opacity 0.1s ease-out;
@@ -463,7 +463,7 @@ header .toolbar-item, footer .toolbar-item {
     border: 0;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: var(--vehicle-3d-view-height);
     position: relative;
     flex-shrink: 0;
@@ -699,9 +699,9 @@ header .toolbar-item, footer .toolbar-item {
     }
 
     .vehicle-viewer {
-        width: 30vw;
+        width: 40vw;
         min-width: 20rem;
-        height: 100%;
+        height: calc(100vh - var(--header-height));
         flex-shrink: 0;
     }
 
